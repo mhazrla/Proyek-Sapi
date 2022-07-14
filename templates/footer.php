@@ -1,4 +1,4 @@
-  <footer class="main-footer">
+<footer class="main-footer">
     <strong>Copyright &copy; 2022</strong> || Created by <strong> Project Mahasiswa || SV IPB.</strong>
     All rights reserved.
   </footer>
@@ -51,50 +51,88 @@
   });
 </script>
 </body>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 <script>
     // Map initialization 
-    var map = L.map('map').setView([14.0860746, 100.608406], 6);
+    
+    var map = L.map('map').setView([-6.5925152,106.7803399], 13);
 
     //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; <a href="https://sv.ipb.ac.id/">SV IPB</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        
     });
     osm.addTo(map);
 
-    if(!navigator.geolocation) {
-        console.log("Your browser doesn't support geolocation feature!")
-    } else {
-        setInterval(() => {
-            navigator.geolocation.getCurrentPosition(getPosition)
-        }, 5000);
+    // L.marker([51.5, -0.09]).addTo(map)
+    // .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    // .openPopup();
+
+    var lokasi = [
+      {
+        "Nama" : "Sapi Gantwenk",
+        "lat" : -6.5925152,
+        "lng" : 106.7803399},
+
+      {
+        "Nama" : "Sapi jelekwq",
+        "lat" : -6.5925152,
+        "lng" : 106.7903404},
+    ]
+
+    for(var i = 0; i<lokasi.length; i++){
+      var popup = 'Nama : ' + lokasi[i].Nama + '<br>' +
+                  'Latitude : ' + lokasi[i].lat + '<br>' +
+                  'Longitude : ' + lokasi[i].lng; 
+
+      circle = new L.circle(
+        [lokasi[i].lat, lokasi[i].lng],
+        {
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5,
+          radius: 200
+        }).addTo(map)
+        
+      marker = new L.marker([lokasi[i].lat, lokasi[i].lng])
+      .bindPopup(popup)
+      .addTo(map);
     }
 
-    var marker, circle;
 
-    function getPosition(position){
-        // console.log(position)
-        var lat = position.coords.latitude
-        var long = position.coords.longitude
-        var accuracy = position.coords.accuracy
+    // if(!navigator.geolocation) {
+    //     console.log("Your browser doesn't support geolocation feature!")
+    // } else {
+    //     setInterval(() => {
+    //         navigator.geolocation.getCurrentPosition(getPosition)
+    //     }, 5000);
+    // }
 
-        if(marker) {
-            map.removeLayer(marker)
-        }
+    // var marker, circle;
 
-        if(circle) {
-            map.removeLayer(circle)
-        }
+    // function getPosition(position){
+    //     // console.log(position)
+    //     var lat = position.coords.latitude
+    //     var long = position.coords.longitude
+    //     var accuracy = position.coords.accuracy
 
-        marker = L.marker([lat, long])
-        circle = L.circle([lat, long], {radius: accuracy})
+    //     if(marker) {
+    //         map.removeLayer(marker)
+    //     }
 
-        var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+    //     if(circle) {
+    //         map.removeLayer(circle)
+    //     }
 
-        map.fitBounds(featureGroup.getBounds())
+    //     marker = L.marker([lat, long])
+    //     circle = L.circle([lat, long], {radius: accuracy})
 
-        console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
-    }
+    //     var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+
+    //     map.fitBounds(featureGroup.getBounds())
+
+    //     console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
+    // }
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
