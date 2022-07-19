@@ -1,13 +1,21 @@
-<footer class="main-footer">
-    <strong>Copyright &copy; 2022</strong> || Created by <strong> Project Mahasiswa || SV IPB.</strong>
-    All rights reserved.
-  </footer>
+<?php
+require('config.php');
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+$query = "SELECT * FROM monitoring ORDER BY nama ASC";
+$result = mysqli_query($db, $query);
+
+?>
+
+<footer class="main-footer">
+  <strong>Copyright &copy; 2022</strong> || Created by <strong> Project Mahasiswa || SV IPB.</strong>
+  All rights reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -46,94 +54,73 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="assets/dist/js/pages/dashboard.js"></script>
 <script>
-    $(document).ready(function(){
-      $('.header').load('header.php');
+  $(document).ready(function() {
+    $('.header').load('header.php');
+    setInterval(() => {
+      $('.load-data').load('load-data.php');
+    }, 2000)
   });
 </script>
+
 </body>
 
 <script>
-    // Map initialization 
-    
-    var map = L.map('map').setView([-6.5925152,106.7803399], 13);
+  // Map initialization 
 
-    //osm layer
-    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://sv.ipb.ac.id/">SV IPB</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        
-    });
-    osm.addTo(map);
+  var map = L.map('map').setView([-6.5925152, 106.7803399], 14);
 
-    // L.marker([51.5, -0.09]).addTo(map)
-    // .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    // .openPopup();
+  //osm layer
+  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://sv.ipb.ac.id/">SV IPB</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
-    var lokasi = [
-      {
-        "Nama" : "Sapi Gantwenk",
-        "lat" : -6.5925152,
-        "lng" : 106.7803399},
-
-      {
-        "Nama" : "Sapi jelekwq",
-        "lat" : -6.5925152,
-        "lng" : 106.7903404},
-    ]
-
-    for(var i = 0; i<lokasi.length; i++){
-      var popup = 'Nama : ' + lokasi[i].Nama + '<br>' +
-                  'Latitude : ' + lokasi[i].lat + '<br>' +
-                  'Longitude : ' + lokasi[i].lng; 
-
-      circle = new L.circle(
-        [lokasi[i].lat, lokasi[i].lng],
-        {
-          color: 'red',
-          fillColor: '#f03',
-          fillOpacity: 0.5,
-          radius: 200
-        }).addTo(map)
-        
-      marker = new L.marker([lokasi[i].lat, lokasi[i].lng])
-      .bindPopup(popup)
-      .addTo(map);
-    }
+  });
+  osm.addTo(map);
 
 
-    // if(!navigator.geolocation) {
-    //     console.log("Your browser doesn't support geolocation feature!")
-    // } else {
-    //     setInterval(() => {
-    //         navigator.geolocation.getCurrentPosition(getPosition)
-    //     }, 5000);
-    // }
+  <?php foreach ($result as $data) : ?>
+    L.marker([<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], 14).bindPopup('Nama&emsp;&emsp; &emsp;: <?= $data['nama'] ?> <br>' + 'Latitude  &emsp;&emsp;: <?= $data['latitude'] ?> <br>' + 'Longitude  &emsp; : <?= $data['longitude'] ?> <br>' + 'Kecepatan&emsp;: <?= $data['speed'] ?> <br>').addTo(map)
 
-    // var marker, circle;
+    circle = new L.circle(
+      [<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 30
+      }).addTo(map)
 
-    // function getPosition(position){
-    //     // console.log(position)
-    //     var lat = position.coords.latitude
-    //     var long = position.coords.longitude
-    //     var accuracy = position.coords.accuracy
+  <?php endforeach ?>
 
-    //     if(marker) {
-    //         map.removeLayer(marker)
-    //     }
 
-    //     if(circle) {
-    //         map.removeLayer(circle)
-    //     }
+  // if(!navigator.geolocation) {
+  //     console.log("Your browser doesn't support geolocation feature!")
+  // } else {
+  //     setInterval(() => {
+  //         navigator.geolocation.getCurrentPosition(getPosition)
+  //     }, 5000);
+  // }
 
-    //     marker = L.marker([lat, long])
-    //     circle = L.circle([lat, long], {radius: accuracy})
 
-    //     var featureGroup = L.featureGroup([marker, circle]).addTo(map)
 
-    //     map.fitBounds(featureGroup.getBounds())
+  // function getPosition(position){
+  //     // console.log(position)
+  //     var lat = position.coords.latitude
+  //     var long = position.coords.longitude
+  //     var accuracy = position.coords.accuracy
 
-    //     console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
-    // }
+  //     if(marker) {
+  //         map.removeLayer(marker)
+  //     }
 
+  //     if(circle) {
+  //         map.removeLayer(circle)
+  //     }
+
+  //     var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+
+  //     map.fitBounds(featureGroup.getBounds())
+
+  //     console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
+  // }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
