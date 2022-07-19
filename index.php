@@ -61,28 +61,22 @@ $dataUT = mysqli_fetch_array($resultUT);
           </div>
         </div>
 
-        <!-- ./col -->
       </div>
-      <!-- /.row -->
-      <!-- Main row -->
       <div class="row">
-        <!-- Left col -->
         <section class="col-lg connectedSortable">
-          <!-- Custom tabs (Charts with tabs)-->
           <div class="card">
             <div class="card-footer">
               <h3 class="card-title">
                 <i class="fas fa-calendar-alt mr-1"></i>
                 <strong>Update Time : </strong> <?= $dataUT['time'] ?>
               </h3>
-            </div><!-- /.card-header -->
+            </div>
+
             <div class="load-data"></div>
           </div>
         </section>
-        <!-- /.Left col -->
 
       </div>
-      <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->

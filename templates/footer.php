@@ -6,7 +6,8 @@ $result = mysqli_query($db, $query);
 
 ?>
 
-<footer class="main-footer">
+
+<footer footer class="main-footer">
   <strong>Copyright &copy; 2022</strong> || Created by <strong> Project Mahasiswa || SV IPB.</strong>
   All rights reserved.
 </footer>
@@ -58,70 +59,12 @@ $result = mysqli_query($db, $query);
     $('.header').load('header.php');
     setInterval(() => {
       $('.load-data').load('load-data.php');
-    }, 2000)
+    }, 2500)
   });
 </script>
 
 </body>
 
-<script>
-  // Map initialization 
-
-  var map = L.map('map').setView([-6.5925152, 106.7803399], 14);
-
-  //osm layer
-  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://sv.ipb.ac.id/">SV IPB</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-
-  });
-  osm.addTo(map);
-
-
-  <?php foreach ($result as $data) : ?>
-    L.marker([<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], 14).bindPopup('Nama&emsp;&emsp; &emsp;: <?= $data['nama'] ?> <br>' + 'Latitude  &emsp;&emsp;: <?= $data['latitude'] ?> <br>' + 'Longitude  &emsp; : <?= $data['longitude'] ?> <br>' + 'Kecepatan&emsp;: <?= $data['speed'] ?> <br>').addTo(map)
-
-    circle = new L.circle(
-      [<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 30
-      }).addTo(map)
-
-  <?php endforeach ?>
-
-
-  // if(!navigator.geolocation) {
-  //     console.log("Your browser doesn't support geolocation feature!")
-  // } else {
-  //     setInterval(() => {
-  //         navigator.geolocation.getCurrentPosition(getPosition)
-  //     }, 5000);
-  // }
-
-
-
-  // function getPosition(position){
-  //     // console.log(position)
-  //     var lat = position.coords.latitude
-  //     var long = position.coords.longitude
-  //     var accuracy = position.coords.accuracy
-
-  //     if(marker) {
-  //         map.removeLayer(marker)
-  //     }
-
-  //     if(circle) {
-  //         map.removeLayer(circle)
-  //     }
-
-  //     var featureGroup = L.featureGroup([marker, circle]).addTo(map)
-
-  //     map.fitBounds(featureGroup.getBounds())
-
-  //     console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
-  // }
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
