@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2022 at 11:28 AM
+-- Generation Time: Jul 19, 2022 at 10:20 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,13 +41,42 @@ CREATE TABLE `logdata` (
 --
 
 INSERT INTO `logdata` (`nama`, `waktu`, `latitude`, `longitude`, `speed`, `status`) VALUES
-('gg gemink', '2022-07-13 08:51:23', '-56985468', '-76809583', 0, 'jago'),
-('gg gemink', '2022-07-13 08:51:23', 'asfa', 'q3532', 0, 'wey2'),
-('yaya', '2022-07-13 08:54:54', '13512', '12351', 0, '12512'),
-('q', '2022-07-13 09:19:23', '', '', 2, ''),
-('Azka', '2022-07-13 15:10:38', '11', '22', 33, 'tidak layak kurban'),
-('Azka', '2022-07-13 15:26:40', '11', '22', 7, 'tidak layak kurban'),
-('q', '2022-07-13 15:28:15', '11', '22', 99, 'tidak layak kurban');
+('dummy', '2022-07-19 11:13:24', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:14:18', '-6.5925152', '106.8803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:14:28', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:36:07', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:36:07', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:36:15', '-6.5925152', '106.8803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:36:52', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:38:47', '-6.5925152', '106.8803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:40:10', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 11:40:49', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 13:13:26', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 14:49:29', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 14:49:42', '-6.6925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 14:49:54', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 14:50:26', '-6.6925152', '106.7803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 14:50:31', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:51:38', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:51:43', '-6.6925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:51:55', '-6.5925152', '106.6803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:52:03', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:53:14', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:53:20', '-6.7925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:53:28', '-6.6925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:53:36', '-6.4925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:53:44', '-6.5925152', '106.5803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:53:56', '-6.5925152', '106.6803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:54:05', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:54:15', '-6.5925152', '106.7803399', 66, 'tidak layak kurban'),
+('aa', '2022-07-19 14:54:30', '-6.5925152', '106.8803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 14:59:12', '-6.5925152', '106.8803399', 66, 'tidak layak kurban'),
+('a', '2022-07-19 14:59:18', '-6.5925152', '106.8803399', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 15:01:24', '-6.5925152', '106.7903404', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 15:01:35', '-6.5925152', '106.7403404', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 15:01:40', '-6.5925152', '106.73403404', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 15:01:44', '-6.5925152', '106.77403404', 66, 'tidak layak kurban'),
+('dummy', '2022-07-19 15:01:49', '-6.5925152', '106.78403404', 66, 'tidak layak kurban');
 
 -- --------------------------------------------------------
 
@@ -58,9 +87,9 @@ INSERT INTO `logdata` (`nama`, `waktu`, `latitude`, `longitude`, `speed`, `statu
 CREATE TABLE `monitoring` (
   `nama` varchar(20) NOT NULL,
   `waktu` datetime NOT NULL DEFAULT current_timestamp(),
-  `latitude` varchar(255) NOT NULL,
-  `longitude` varchar(255) NOT NULL,
-  `speed` varchar(10) NOT NULL,
+  `latitude` varchar(255) NOT NULL DEFAULT '-6.591175',
+  `longitude` varchar(255) NOT NULL DEFAULT '106.804481',
+  `speed` varchar(10) NOT NULL DEFAULT '0',
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -69,16 +98,19 @@ CREATE TABLE `monitoring` (
 --
 
 INSERT INTO `monitoring` (`nama`, `waktu`, `latitude`, `longitude`, `speed`, `status`) VALUES
-('a', '0000-00-00 00:00:00', '', '', '', ''),
-('b', '0000-00-00 00:00:00', '', '', '', ''),
-('c', '0000-00-00 00:00:00', '', '', '', ''),
-('d', '0000-00-00 00:00:00', '', '', '', ''),
-('a', '0000-00-00 00:00:00', '', '', '', ''),
-('a', '0000-00-00 00:00:00', '', '', '', ''),
-('z', '0000-00-00 00:00:00', '', '', '', ''),
-('Azka', '2022-07-13 15:26:40', '11', '22', '7', 'tidak layak kurban'),
-('uy', '2022-07-13 14:51:57', '', '', '', ''),
-('q', '2022-07-13 15:28:15', '11', '22', '99', 'tidak layak kurban');
+('a', '2022-07-19 15:12:44', '-6.591175', '106.804481', '0', ''),
+('dummy', '2022-07-19 15:01:49', '-6.5925152', '106.78403404', '66', 'tidak layak kurban'),
+('Sapi jelekwq', '2022-07-14 15:43:50', '-6.5925152', '106.7903404', '', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `monitoring`
+--
+ALTER TABLE `monitoring`
+  ADD PRIMARY KEY (`nama`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
