@@ -24,7 +24,7 @@ $result = mysqli_query($db, $query);
 
 
   <?php foreach ($result as $data) : ?>
-    L.marker([<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], 14).bindPopup('Nama&emsp;&emsp; &emsp;: <?= $data['nama'] ?> <br>' + 'Latitude  &emsp;&emsp;: <?= $data['latitude'] ?> <br>' + 'Longitude  &emsp; : <?= $data['longitude'] ?> <br>' + 'Kecepatan&emsp;: <?= $data['speed'] ?> <br>').addTo(map)
+    L.marker([<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], 16).bindPopup('Nama&emsp;&emsp; &emsp;: <?= $data['nama'] ?> <br>' + 'Latitude  &emsp;&emsp;: <?= $data['latitude'] ?> <br>' + 'Longitude  &emsp; : <?= $data['longitude'] ?> <br>' + 'Kecepatan&emsp;: <?= $data['speed'] ?> <br>').addTo(map)
 
     circle = new L.circle(
       [<?= $data['latitude'] ?>, <?= $data['longitude'] ?>], {

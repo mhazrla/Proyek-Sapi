@@ -42,7 +42,7 @@ $result = mysqli_query($db, $query);
 
             <?php foreach ($result as $data) : ?>
               <li class="nav-item">
-                <a href="logData2.php?nama=<?= $data['nama'] ?>" class="nav-link ">
+                <a href="logData.php?nama=<?= $data['nama'] ?>" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p><?= $data['nama'] ?></p>
                 </a>

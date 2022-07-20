@@ -59,7 +59,7 @@ $result = mysqli_query($db, $query);
     $('.header').load('header.php');
     setInterval(() => {
       $('.load-data').load('load-data.php');
-    }, 2500)
+    }, 3500)
   });
 </script>
 

@@ -6,9 +6,7 @@ $query = "DELETE FROM logdata WHERE nama='$nama'";
 $result = mysqli_query($db, $query);
 
 if($result){
-    header("Location: logData2.php?nama=$nama");
+    header("Location: logData.php?nama=$nama");
 } else {
     die("Gagal menghapus data");
 }
-
-?>
